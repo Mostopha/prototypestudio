@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour {
 
+    public LayerMask layerMasque;
+
     public float speed;
     public float jumpAmount;
     public float glideAmount;
@@ -16,13 +18,15 @@ public class PlayerMovementScript : MonoBehaviour {
 
     public float dist;
     public Vector3 dir;
+    private RaycastHit2D hit;
 
 
     public Rigidbody2D rb;
-    public Rigidbody2D rocket;
+   // public Rigidbody2D rocket;
 
     public bool onGround = false;
     private GameObject wings;
+    public bool isGliding;
 
     // Use this for initialization
     void Start() {
@@ -30,17 +34,33 @@ public class PlayerMovementScript : MonoBehaviour {
         rb = this.GetComponent<Rigidbody2D>();
         wings = rb.transform.Find("Wings").gameObject;
         wings.SetActive(false);
+
+        isGliding = false;
+
+       
+
     }
 
     // Update is called once per frame
     void Update() {
 
 
-        Move(Vector3.down, downKey);
+       // Move(Vector3.down, downKey);
         Move(Vector3.left, leftKey);
         Move(Vector3.right, rightKey);
         Jump();
 
+        hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.2f,layerMasque);
+        Debug.DrawRay(transform.position, -Vector2.up, Color.red, 10);
+
+        if (hit.collider.tag == "Ground") {
+            onGround = true;
+
+        }
+
+        if ((this.GetComponent<Rigidbody2D>().velocity.y < 1)&& onGround == false) {
+            onGround = true;
+        }
         
 
     }
@@ -62,14 +82,20 @@ public class PlayerMovementScript : MonoBehaviour {
            // wings.SetActive(true);
 
         }
-        else if (Input.GetKeyDown(jumpKey) && onGround == false) {
+        else if(onGround==true){
+            wings.SetActive(false);
+
+        }
+        else if (Input.GetKey(jumpKey) && onGround == false) {
             rb.gravityScale = glideAmount;
             wings.SetActive(true);
+            isGliding = true;
         }
 
         else if (Input.GetKeyUp(jumpKey)) {
             rb.gravityScale = 1;
             wings.SetActive(false);
+            isGliding = false;
         }
 
 
@@ -77,12 +103,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter2D(Collision2D collider) {
-        if (collider.gameObject.tag == "Ground") {
-            onGround = true;
-        }
+  
 
 
-
-    }
+   
+    
 }
