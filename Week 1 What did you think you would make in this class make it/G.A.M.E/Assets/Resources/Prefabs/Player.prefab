@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20068064471217348}
   - component: {fileID: 124084761276561038}
   - component: {fileID: 81375264810377350}
+  - component: {fileID: 114551323234260110}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -56,6 +57,7 @@ GameObject:
   - component: {fileID: 33790000930255938}
   - component: {fileID: 23849364416473828}
   - component: {fileID: 61249835383210170}
+  - component: {fileID: 114661677770415400}
   m_Layer: 2
   m_Name: Sword
   m_TagString: Untagged
@@ -77,6 +79,7 @@ GameObject:
   - component: {fileID: 50493844418874662}
   - component: {fileID: 114647964775604484}
   - component: {fileID: 114414705265104368}
+  - component: {fileID: 114925586822109936}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -222,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.835132
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -440,6 +443,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stab: {fileID: 1853544178759506}
+--- !u!114 &114551323234260110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264709623661280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0ffb4232c52c3154ca47605e36f756e0, type: 2}
 --- !u!114 &114647964775604484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,6 +482,17 @@ MonoBehaviour:
   rb: {fileID: 50493844418874662}
   onGround: 0
   isGliding: 0
+--- !u!114 &114661677770415400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552980777468324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c6026dc266a7d408c864a65eda641f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114900331059230602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,6 +502,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be6de9feef6461642ad7162bf84006e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114925586822109936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653817461721796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b50297e68bbab34b82a42bbfff3a6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!124 &124084761276561038

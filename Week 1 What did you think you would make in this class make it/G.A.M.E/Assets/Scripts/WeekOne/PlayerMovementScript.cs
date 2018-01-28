@@ -43,7 +43,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        Vector2 currentSpeed = this.gameObject.GetComponent<Rigidbody2D>().velocity;
 
        // Move(Vector3.down, downKey);
         Move(Vector3.left, leftKey);
@@ -51,7 +51,7 @@ public class PlayerMovementScript : MonoBehaviour {
         Jump();
 
         hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.2f,layerMasque);
-        Debug.DrawRay(transform.position, -Vector2.up, Color.red, 10);
+        Debug.DrawRay(transform.position, -Vector2.up * 1.2f, Color.red);
 
         if (hit.collider.tag == "Ground") {
             onGround = true;
@@ -61,8 +61,12 @@ public class PlayerMovementScript : MonoBehaviour {
         if ((this.GetComponent<Rigidbody2D>().velocity.y < 1)&& onGround == false) {
             onGround = true;
         }
-        
 
+        if (isGliding == true) {
+
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+        }
     }
 
     void Move(Vector3 dir, KeyCode key) {
