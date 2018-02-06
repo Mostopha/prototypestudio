@@ -42,7 +42,7 @@ public class PlayerMovementScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void spawn() {
         Vector2 currentSpeed = this.gameObject.GetComponent<Rigidbody2D>().velocity;
 
        // Move(Vector3.down, downKey);

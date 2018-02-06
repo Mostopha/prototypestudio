@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 192a67193094c154ea64ee6c8d5dccc8
+timeCreated: 1517427047
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Casablanca Noir Personal Use
+  fontNames:
+  - Casablanca Noir Personal Use
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

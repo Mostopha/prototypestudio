@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/HallowedBeThyGame.unity
+- path: Assets/Scenes/Week2/darwinFinchPI.unity
   isLoaded: 1
   isActive: 1

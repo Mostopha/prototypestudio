@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class sceneChange : MonoBehaviour {
 
     public void changeScene(string nextScene) {
-        GameObject.Find("GameManager").GetComponent<pause>().paused=false;
+        //GameObject.Find("GameManager").GetComponent<pause>().paused=false;
         Time.timeScale = 1f;
         string sceneText = nextScene;
         
